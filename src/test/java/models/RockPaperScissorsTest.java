@@ -18,4 +18,11 @@ public class RockPaperScissorsTest {
     int expected = 1;
     assertEquals(expected, testRockPaperScissors.evaluateCombos("paper", "rock"));
   }
+
+  @Test
+  public void evaluateCombos_scissorsVsPaper_int() {
+    RockPaperScissors testRockPaperScissors = new RockPaperScissors();
+    int expected = 1;
+    assertEquals(expected, testRockPaperScissors.evaluateCombos("scissors", "paper"));
+  }
 }
