@@ -11,15 +11,12 @@ public class RockPaperScissors {
     boolean player2Favor1 = player1.equals("scissors") && player2.equals("rock");
     boolean player2Favor2 = player1.equals("rock") && player2.equals("paper");
     boolean player2Favor3 = player1.equals("paper") && player2.equals("scissors");
-    boolean tie1 = player1.equals("paper") && player2.equals("paper");
-    boolean tie2 = player1.equals("scissors") && player2.equals("scissors");
-    boolean tie3 = player1.equals("rock") && player2.equals("rock");
 
     if (player1Favor1 || player1Favor2 || player1Favor3) {
       winner = "Player 1";
     } else if (player2Favor1 || player2Favor2 || player2Favor3) {
       winner = "Player 2";
-    } else if (tie1 || tie2 || tie3) {
+    } else if (player1.equals(player2)) {
       winner = "tie";
     } else {
       winner = "wrong";
