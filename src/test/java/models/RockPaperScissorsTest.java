@@ -53,4 +53,11 @@ public class RockPaperScissorsTest {
     String expected = "tie";
     assertEquals(expected, testRockPaperScissors.evaluateCombos("paper", "paper"));
   }
+
+  @Test
+  public void evaluateCombos_scissorsVSScissors_String() {
+    RockPaperScissors testRockPaperScissors = new RockPaperScissors();
+    String expected = "tie";
+    assertEquals(expected, testRockPaperScissors.evaluateCombos("scissors", "scissors"));
+  }
 }
