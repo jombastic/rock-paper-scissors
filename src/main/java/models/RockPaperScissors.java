@@ -14,7 +14,7 @@ public class RockPaperScissors {
     boolean player2Favor3 = player1.equals("paper") && player2.equals("scissors");
     if (player1Favor1 || player1Favor2 || player1Favor3) {
       winner = "Player 1";
-    } else if (player2Favor1 || player2Favor2) {
+    } else if (player2Favor1 || player2Favor2 || player2Favor3) {
       winner = "Player 2";
     }
     return winner;
