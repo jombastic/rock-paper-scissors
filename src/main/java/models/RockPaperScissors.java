@@ -20,6 +20,7 @@ public class RockPaperScissors {
     } else if (tie1 || tie2 || tie3) {
       winner = "tie";
     }
+
     return winner;
   }
 }
