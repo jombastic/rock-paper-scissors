@@ -67,4 +67,11 @@ public class RockPaperScissorsTest {
     String expected = "tie";
     assertEquals(expected, testRockPaperScissors.evaluateCombos("rock", "rock"));
   }
+
+  @Test
+  public void computerChooses_shouldBeAString_true() {
+    RockPaperScissors testRockPaperScissors = new RockPaperScissors();
+    String computerChoice = testRockPaperScissors.computerChooses();
+    assertEquals(true, computerChoice instanceof String);
+  }
 }

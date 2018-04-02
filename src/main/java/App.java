@@ -10,30 +10,52 @@ public class App {
     RockPaperScissors newGame = new RockPaperScissors();
     boolean run = true;
     while (run) {
-      System.out.println("Welcome to rock-paper-scissors game!");
       try {
-        System.out.print("Player 1: ");
-        String player1 = bufferedReader.readLine();
-        System.out.print("Player 2: ");
-        String player2 = bufferedReader.readLine();
-        boolean player1Eval = player1.equals("rock") || player1.equals("paper") || player1.equals("scissors");
-        boolean player2Eval = player2.equals("rock") || player2.equals("paper") || player2.equals("scissors");
-
-        if (!player1Eval || !player2Eval) {
-          System.out.println("Wrong input!");
-        } else {
-          String winner = newGame.evaluateCombos(player1, player2);
-          if (winner.equals("Player 1")) {
-            System.out.println(winner + " is the winner!");
-          } else if (winner.equals("Player 2")) {
-            System.out.println(winner + " is the winner!");
-          } else if (winner.equals("tie")) {
-            System.out.println("It is a" + winner);
+        System.out.println("Welcome to rock-paper-scissors game!");
+        System.out.println("Choose your opponent: player or computer");
+        String opponent = bufferedReader.readLine();
+        switch (opponent) {
+          case "player": {
+            System.out.print("Player 1: ");
+            String player1 = bufferedReader.readLine();
+            System.out.print("Player 2: ");
+            String player2 = bufferedReader.readLine();
+            System.out.println("-----------------------------");
+            System.out.println(result(player1, player2, newGame));
+            System.out.println("-----------------------------");
+            break;
           }
+          case "computer": {
+            System.out.print("Player 1: ");
+            String player1 = bufferedReader.readLine();
+            String player2 = newGame.computerChooses();
+            System.out.println("Player 2: " + player2);
+            System.out.println("-----------------------------");
+            System.out.println(result(player1, player2, newGame));
+            System.out.println("-----------------------------");
+            break;
+          }
+          default:
+            System.out.println("Wrong opponent!");
+            break;
         }
       } catch (IOException e) {
         e.printStackTrace();
       }
+    }
+  }
+
+  private static String result(String player1, String player2, RockPaperScissors newGame) {
+    String winner = newGame.evaluateCombos(player1, player2);
+    switch (winner) {
+      case "Player 1":
+        return winner + " is the winner!";
+      case "Player 2":
+        return winner + " is the winner!";
+      case "tie":
+        return "It is a " + winner;
+      default:
+        return "Wrong input!";
     }
   }
 }
